@@ -15,6 +15,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+#ifdef OLED_DRIVER_ENABLE
+void oled_task_user(void) {
+    oled_write_ln_P(PSTR("Hello, World! \\(^o^)/"), false);
+}
+#endif
+
 void matrix_init_user(void) {
 
 }
