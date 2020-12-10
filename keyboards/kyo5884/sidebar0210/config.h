@@ -16,6 +16,8 @@
 #define UNUSED_PINS { F4, F5 }
 #define DIODE_DIRECTION COL2ROW
 
+#define OLED_DISPLAY_128X64
+
 #define ENCODERS_PAD_A { E6, C6 }
 #define ENCODERS_PAD_B { D7, D4 }
 #define ENCODER_RESOLUTION 4
