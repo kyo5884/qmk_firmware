@@ -2,12 +2,12 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-    KC_ENTER, KC_SPACE,
-	  KC_P0,    KC_P1,
-	  KC_P2,    KC_P3,
-    KC_P4,    KC_P5,
-	  KC_P6,    KC_P7,
-    KC_P8,    KC_P9
+    KC_BTN1, KC_BTN1,
+	  KC_RCTL, KC_RSFT,
+	  KC_RALT, KC_RGUI,
+	  KC_DOWN, KC_UP,
+    KC_LEFT, KC_RGHT,
+    KC_SPC,  KC_ENT
   )
 };
 
@@ -27,10 +27,10 @@ void matrix_scan_user(void) {}
 
 void encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) { /* Left encoder */
-    if (clockwise) tap_code(KC_DOWN);
-    else tap_code(KC_UP);
+    if (clockwise) tap_code(KC_MS_UP);
+    else tap_code(KC_MS_DOWN);
   } else if (index == 1) { /* Right encoder */
-    if (clockwise) tap_code(KC_RIGHT);
-    else tap_code(KC_LEFT);
+    if (clockwise) tap_code(KC_MS_RIGHT);
+    else tap_code(KC_MS_LEFT);
   }
 }
